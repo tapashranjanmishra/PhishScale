@@ -1,5 +1,4 @@
 from fastapi import FastAPI, Depends, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 
@@ -20,10 +19,14 @@ app = FastAPI(
 
 
 # CORS
+import fastapi.middleware.cors
+
 app.add_middleware(
-    CORSMiddleware,
+    fastapi.middleware.cors.fastapi.middleware.cors.CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173"
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://phishscale-hazel.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
