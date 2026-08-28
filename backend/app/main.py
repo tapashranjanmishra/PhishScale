@@ -6,6 +6,8 @@ from .database import Base, engine, get_db
 from . import models
 from .routers import targets, campaigns, templates, tracking
 
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Create database tables if they don't exist
 Base.metadata.create_all(bind=engine)
@@ -19,10 +21,6 @@ app = FastAPI(
 
 
 # CORS
-from fastapi.middleware.cors import CORSMiddleware
-
-app = FastAPI()
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -34,12 +32,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
+
+# Routers
 app.include_router(targets.router)
 app.include_router(campaigns.router)
 app.include_router(templates.router)
 app.include_router(tracking.router)
-
 # --------------------------------------------------
 # BASIC ROUTES
 # --------------------------------------------------
