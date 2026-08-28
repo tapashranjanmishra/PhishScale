@@ -76,7 +76,7 @@ function Dashboard() {
 
         // Get target groups
         const groupsResponse = await fetch(
-          `${API_BASE}/api/target-groups`
+          `${API_URL}/api/target-groups`
         );
 
         if (!groupsResponse.ok) {
@@ -87,7 +87,7 @@ function Dashboard() {
 
         // Get templates
         const templatesResponse = await fetch(
-          `${API_BASE}/api/templates`
+          `${API_URL}/api/templates`
         );
 
         if (!templatesResponse.ok) {
@@ -103,7 +103,7 @@ function Dashboard() {
           const targetRequests = groups.map(async (group) => {
             try {
               const response = await fetch(
-                `${API_BASE}/api/target-groups/${group.id}/targets`
+                `${API_URL}/api/target-groups/${group.id}/targets`
               );
 
               if (!response.ok) {
