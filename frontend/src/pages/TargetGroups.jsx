@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import API_URL from "../api";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -9,10 +10,6 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
-
-
-const API_URL = "http://127.0.0.1:8000";
-
 
 function TargetGroups() {
   const navigate = useNavigate();

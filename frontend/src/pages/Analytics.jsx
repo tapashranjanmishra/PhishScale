@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useEffect, useState } from "react";
 
 import {
@@ -39,7 +40,7 @@ useEffect(() => {
   async function fetchCampaigns() {
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/campaigns"
+       `${API_URL}/api/campaigns`
       );
 
       if (!response.ok) {

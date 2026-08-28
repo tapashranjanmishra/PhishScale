@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import API_URL from "../api";
 import { useNavigate } from "react-router-dom";
 import {
   UsersRound,
@@ -10,8 +11,6 @@ import {
   KeyRound,
   Sparkles,
 } from "lucide-react";
-
-const API_BASE = "http://127.0.0.1:8000";
 
 const steps = [
   {

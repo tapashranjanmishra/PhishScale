@@ -13,8 +13,7 @@ import {
 } from "lucide-react";
 
 
-const API_URL = "http://127.0.0.1:8000";
-
+import API_URL from "../api";
 
 function TargetGroupManage() {
   const { id } = useParams();
