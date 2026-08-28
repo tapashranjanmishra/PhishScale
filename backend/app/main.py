@@ -19,13 +19,11 @@ app = FastAPI(
 
 
 # CORS
-import fastapi.middleware.cors
+from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
-    fastapi.middleware.cors.fastapi.middleware.cors.CORSMiddleware,
+    CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
         "https://phishscale-hazel.vercel.app",
     ],
     allow_credentials=True,

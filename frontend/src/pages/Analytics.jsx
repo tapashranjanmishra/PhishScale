@@ -84,7 +84,7 @@ useEffect(() => {
       setError("");
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/analytics/${campaignId}`
+        `${API_URL}/api/analytics/${campaignId}`
       );
 
       if (!response.ok) {
